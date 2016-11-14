@@ -1,3 +1,5 @@
 #
 # system.prop for mocha
 #
+persist.sys.usb.config=mtp
+persist.sys.isUsbOtgEnabled=1
