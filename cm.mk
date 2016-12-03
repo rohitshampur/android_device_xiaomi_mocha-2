@@ -7,7 +7,7 @@ TARGET_SCREEN_WIDTH := 1536
 PRODUCT_RELEASE_NAME := mocha
 
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/beanstalk/config/common_full_tablet_wifionly.mk)
+$(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/xiaomi/mocha/device.mk)
