@@ -10,3 +10,4 @@
 /persist              ext4      /dev/block/platform/sdhci-tegra.3/by-name/PST
 /data                 ext4      /dev/block/platform/sdhci-tegra.3/by-name/UDA
 /external_sd          vfat      /dev/block/platform/sdhci-tegra.2/by-num/p1         flags=display="MICRO SD";storage;wipeingui;removable
+/usb-otg 	      vfat	/dev/block/sda1 /dev/block/sda 			    flags=display="USB OTG";storage;wipeingui;removable
