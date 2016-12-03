@@ -1,5 +1,24 @@
 #
 # system.prop for mocha
 #
-persist.sys.usb.config=mtp
-persist.sys.isUsbOtgEnabled=1
+# usb vendor and product ID definition
+ro.nv.usb.vid = 2717
+ro.nv.usb.pid.mtp = 0660
+ro.nv.usb.pid.mtp.adb = 0668
+ro.nv.usb.pid.rndis = 0680
+ro.nv.usb.pid.rndis.adb = 0688
+ro.nv.usb.pid.ptp = 0610
+ro.nv.usb.pid.ptp.adb = 0618
+
+# disable strict mode
+persist.sys.strictmode.disable=true
+
+#set no ril
+ro.radio.noril=yes
+
+# set default power mode
+persist.sys.aries.power_profile=middle
+persist.sys.NV_POWER_MODE=1
+
+# enable auto-brightness adjustment
+persist.power.useautobrightadj=true

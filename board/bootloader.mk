@@ -1,0 +1,3 @@
+#Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := mocha
+TARGET_NO_BOOTLOADER := true

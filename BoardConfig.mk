@@ -1,10 +1,29 @@
+#
+# Copyright (C) 2016 The CyanogenMod Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+
 USE_CAMERA_STUB := true
+TARGET_USE_GENERIC_AUDIO := true
+
+include device/xiaomi/mocha/board/*.mk
 
 # inherit from the proprietary version
-#-include vendor/xiaomi/mocha/BoardConfigVendor.mk
+-include vendor/xiaomi/mocha/BoardConfigVendor.mk
 
+#Device-specific
 TARGET_ARCH := arm
-TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM := tegra
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
@@ -13,42 +32,8 @@ TARGET_CPU_VARIANT := cortex-a15
 TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
-TARGET_BOOTLOADER_BOARD_NAME := mocha
-TARGET_USERIMAGES_USE_EXT4 := true
-
-BOARD_KERNEL_CMDLINE := "androidboot.selinux=permissive"
-BOARD_KERNEL_BASE := 0x10000000
-BOARD_KERNEL_PAGESIZE := 2048
-
-# fix this up by examining /proc/mtd on a running device
-BOARD_BOOTIMAGE_PARTITION_SIZE := 20971520
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 20971520
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 671088640
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 13742637056
-BOARD_FLASH_BLOCK_SIZE := 131072
-
-# Kernel
-TARGET_KERNEL_CONFIG := mocha_user_defconfig
-TARGET_KERNEL_SOURCE := kernel/xiaomi/mocha
-TARGET_KERNEL_ARCH := arm
-KERNEL_ARCH := arm
-
-# Recovery
-BOARD_HAS_NO_SELECT_BUTTON := true
-TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/backlight/pwm-backlight/brightness\"
-COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/xiaomi/mocha/recovery/recovery_keys.c
-TARGET_RECOVERY_FSTAB := device/xiaomi/mocha/recovery.fstab
-RECOVERY_SDCARD_ON_DATA := true
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
-TW_INTERNAL_STORAGE_PATH := "/data/media"
-TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
-TW_EXTERNAL_STORAGE_PATH := "/sdcard"
-TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
-
 # Graphics
 USE_OPENGL_RENDERER := true
-
 BOARD_USES_STOCK_POLICY := true
 
 # Wifi related defines
