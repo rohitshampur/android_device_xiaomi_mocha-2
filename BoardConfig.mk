@@ -36,6 +36,13 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 USE_OPENGL_RENDERER := true
 BOARD_USES_STOCK_POLICY := true
 
+#Build Initfiles
+PRODUCT_PACKAGES += \
+    fstab.mocha \
+    init.mocha.rc \
+    ueventd.mocha.rc \
+    ueventd.rc
+
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
